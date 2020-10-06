@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+@font-face {
+    font-family: "Rubik";
+    src:
+            url("Fonts/regular/Rubik-Regular.woff") format("woff"),
+            url("Fonts/regular/Rubik-Regular.woff2") format("woff2"),
+            url("Fonts/regular/Rubik-Regular.eot") format("embedded-opentype");
+    font-weight: 400;
+    font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: "Rubik";
+    src:
+            url("Fonts/medium/Rubik-Medium.woff") format("woff"),
+            url("Fonts/medium/Rubik-Medium.woff2") format("woff2"),
+            url("Fonts/medium/Rubik-Medium.eot") format("embedded-opentype");
+    font-weight: 500;
+    font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+    font-family: "Rubik";
+    src:
+            url("Fonts/bold/Rubik-Bold.woff") format("woff"),
+            url("Fonts/bold/Rubik-Bold.woff2") format("woff2"),
+            url("Fonts/bold/Rubik-Bold.eot") format("embedded-opentype");
+    font-weight: 700;
+    font-style: normal;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+html {
+    height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+body {
+    height: 100%;
+    font-family: "Rubik", sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.page-header {
+    flex: 0 0 auto;
+}
+
+.page-content {
+    flex: 1 0 auto;
+}
+
+.page-footer {
+    flex: 0 0 auto;
+    background-color: #F2F2F2;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    box-shadow: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    transition: 0.2s;
+}
+
+.btn--red {
+    color: white;
+    background-color: #E5261E;
+    height: 38px;
+    width: 113px;
+}
+
+.btn--red:hover {
+    background-color: #CC221B;
+}
+
+.btn--transparent {
+    color:#E5261E;
+    background-color: transparent;
+}
+
+button, input, textarea {
+    font: inherit;
+}
+
+ul {
+    margin: 0;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0)
 }

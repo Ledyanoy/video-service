@@ -1,4 +1,3 @@
-
 import cat from "./images/films/cat.png";
 import bat from "./images/films/bat.png";
 import once from "./images/films/once.png";

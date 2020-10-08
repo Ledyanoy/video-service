@@ -1,6 +1,7 @@
 import React, {useReducer} from 'react';
 import styled from 'styled-components';
-import Films from './Films/Films'
+import Films from './Films/Films';
+import Tele from './Tele/Tele';
 
 
 const Container = styled.div`     
@@ -83,10 +84,10 @@ const Main = () => {
     const tabs = State.tabs.map(tab => {
         return (
             <Tab key={tab.id}
-                active={tab.id === State.activeTab}
-                onClick={() => {
-                    tabsClickHandler(tab.id)
-                }}>
+                 active={tab.id === State.activeTab}
+                 onClick={() => {
+                     tabsClickHandler(tab.id)
+                 }}>
                 <h2>{tab.text}</h2>
             </Tab>
         )
@@ -96,13 +97,13 @@ const Main = () => {
 
     switch (State.activeTab) {
         case 'films' :
-            tabsContent = <Films />
+            tabsContent = <Films/>
             break;
         case 'tv' :
-            tabsContent = <h1>2</h1>
+            tabsContent = <Tele/>
             break;
         default :
-            tabsContent = <h1>skfjdgslkdjfg</h1>;
+            tabsContent = <Films/>;
     }
 
     return (

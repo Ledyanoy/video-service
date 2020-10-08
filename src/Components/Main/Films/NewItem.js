@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 
 const Li = styled.li`    
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 8px;
     max-width: 280px;
     span {
         display: block;
@@ -22,7 +22,7 @@ const ImageOuter = styled.div`
     background: #C4C4C4;
     border-radius: 8px;
     overflow: hidden;
-    margin-bottom: 17px;
+    margin-bottom: 16px;
     position: relative;
     cursor: pointer;
     img {

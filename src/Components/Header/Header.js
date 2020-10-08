@@ -14,8 +14,12 @@ const Container = styled.div`
 const Logo = styled.a`  
   display:flex;
   align-items: center;
-  text-transform: none;
-  text-decoration: none;
+  
+  img {
+      height: 36px;
+      width: 37px;
+  }
+  
   span {
       margin-left: 11px;
       font-weight: 500;
@@ -28,7 +32,7 @@ const Logo = styled.a`
 const Header = () => {
     return (
         <Container>
-            <Logo href='/'>
+            <Logo href='/' className='link'>
                 <img src={logo} alt="logo"/>
                 <span>Видеосервис</span>
             </Logo>

@@ -3,6 +3,10 @@ import cat from "./images/films/cat.png";
 import bat from "./images/films/bat.png";
 import once from "./images/films/once.png";
 import strip from "./images/films/strip.png";
+import smile from "./images/films/smile.png";
+import cry from "./images/films/cry.png";
+import alien from "./images/films/alien.png";
+import scary from "./images/films/scary.png";
 
 const filmsData = {
     newItems: [
@@ -33,9 +37,28 @@ const filmsData = {
     ],
     genres: [
         {
+            id: 1,
             title: "Комедии",
-            image: "",
+            image: smile,
             color: "yellow"
+        },
+        {
+            id: 2,
+            title: "Драмы",
+            image: cry,
+            color: "pink"
+        },
+        {
+            id: 3,
+            title: "Фантастика",
+            image: alien,
+            color: "blue"
+        },
+        {
+            id: 4,
+            title: "Ужасы",
+            image: scary,
+            color: "grey"
         }
     ]
 }

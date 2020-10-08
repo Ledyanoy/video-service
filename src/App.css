@@ -50,6 +50,7 @@ body {
 
 .page-content {
     flex: 1 0 auto;
+    padding-bottom: 64px;
 }
 
 .page-footer {
@@ -104,4 +105,21 @@ ul {
     overflow: hidden;
     border: 0;
     clip: rect(0 0 0 0)
+}
+
+.link {
+    text-decoration: none;
+}
+
+.link--phone {
+    color: #333333;
+    display: inline-flex;
+    margin-top: 6px;
+}
+
+.link--creator {
+    color: #1F4766;
+    font-weight: 500;
+    display: block;
+    margin-top: 10px;
 }

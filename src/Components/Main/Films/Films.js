@@ -1,5 +1,6 @@
 import React from 'react';
-import NewItem from './NewItem'
+import NewItem from './NewItem';
+import Genre from './Genre'
 import fireIcon from "../../../Assets/fire-icon.png";
 import styled from 'styled-components';
 
@@ -13,27 +14,27 @@ const Title = styled.h3`
     font-weight: 500;
     font-size: 24px;
     line-height: 28px;    
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 `
 
 const TitleFire = styled(Title)`
-  position: relative;
-  padding-left: 30px;
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top:50%;
-    transform: translateY(-50%);
-    display: block;       
-    background-image: url(${fireIcon});
-    height: 24px;
-    width: 24px;
-    background-size: cover;
-  }
+    position: relative;
+    padding-left: 30px;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top:50%;
+        transform: translateY(-50%);
+        display: block;       
+        background-image: url(${fireIcon});
+        height: 24px;
+        width: 24px;
+        background-size: cover;
+    }
 `
 
-const FilmsList = styled.ul`     
+const List = styled.ul`     
     list-style: none;
     padding-left: 0;  
     margin-left: -10px;
@@ -44,23 +45,23 @@ const FilmsList = styled.ul`
 
 
 const Films = () => {
-    const filmItems = filmsData.newItems.map(item => <NewItem key={item.id} item={item}/>)
+    const filmItems = filmsData.newItems.map(item => <NewItem key={item.id} item={item}/>);
+    const genreItems = filmsData.genres.map(item => <Genre key={item.id} item={item}/>);
 
     return (
         <Container>
             <section>
-                <TitleFire>
-                    Новинки
-                </TitleFire>
-                <FilmsList>
+                <TitleFire>Новинки</TitleFire>
+                <List>
                     {filmItems}
-                </FilmsList>
-
+                </List>
             </section>
             <section>
                 <Title>Жанры</Title>
+                <List>
+                    {genreItems}
+                </List>
             </section>
-
         </Container>
     );
 }

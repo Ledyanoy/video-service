@@ -52,14 +52,14 @@ const ScheduleList = styled.ul`
         font-size: 16px;
         line-height: 19px;
         &:first-of-type {
-        margin-right: 20px;
+        margin-right: 22px;
         }
     }          
 `
 
 
 const TvItem = ({item}) => {
-    const scheduleItems = item.schedule.map(item => <li>
+    const scheduleItems = item.schedule.map(item => <li key={item.time}>
         <span>{item.time}</span>
         <span>{item.name}</span>
     </li>)

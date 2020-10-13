@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import {Formik, Form, Field} from 'formik';
-
+import {setLogonInStorage} from "../../Helpers/SetLocalStorage";
 
 const Title = styled.span`
     font-weight: 500;
@@ -73,7 +73,7 @@ const InputBox = styled.span`
         content: '';
         height: 10px;
         width: 6px;
-        top: 0px;
+        top: 0;
         left: 5px;               
         transform: rotate(45deg);
         border-right: ${(props) => (props.active ? '1px solid #E5261E;' : 'none')};
@@ -82,12 +82,12 @@ const InputBox = styled.span`
 `
 
 const ErrorField = styled.div`
-  color:#E5261E;  
-  font-size: 14px;
-  line-height: 16px;
-  position: absolute;
-  bottom: 6px;
-  right:0;
+    color:#E5261E;  
+    font-size: 14px;
+    line-height: 16px;
+    position: absolute;
+    bottom: 6px;
+    right:0;
 `
 
 const Button = styled.button`  
@@ -107,7 +107,7 @@ const validation = values => {
     return errors;
 };
 
-export const FormikLogin = () => (
+export const FormikLogin = ({GlobalDispatch, closeModal, setUser}) => (
 
     <Formik
         initialValues={{
@@ -117,8 +117,15 @@ export const FormikLogin = () => (
         }}
         validate={validation}
         onSubmit={values => {
-            // same shape as initial values
-            console.log(values);
+            if (values.remember) {
+                setLogonInStorage(values.login);
+            }
+            const newUser = {
+                login: values.login,
+                isAuth: true,
+            }
+            GlobalDispatch(setUser(newUser));
+            closeModal();
         }}
     >
         {({errors, touched}) => (
@@ -157,13 +164,13 @@ export const FormikLogin = () => (
 );
 
 
-const Login = () => {
+const Login = (props) => {
     return (
         <>
             <Title>Вход</Title>
-            <FormikLogin/>
+            <FormikLogin {...props}/>
         </>
     );
 }
 
-export default Login
+export default Login;

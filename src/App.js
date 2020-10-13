@@ -3,7 +3,6 @@ import {GlobalContext} from './Components/Context';
 import './App.css';
 import wrapperOuter from './Helpers/Wrapper';
 import Modal from './Components/Modal/Modal';
-import styled from 'styled-components';
 
 import Header from './Components/Header/Header';
 import Main from './Components/Main/Main';
@@ -38,9 +37,8 @@ const reducer = (GlobalState, action) => {
 
 const initialStore = {
     user: {
-        login: '',
-        password: '',
-        isAuth: '',
+        login: localStorage.videoServiceLogin ? localStorage.videoServiceLogin : '',
+        isAuth: !!localStorage.videoServiceLogin,
     },
     activeTab: 'films',
     modal: {
@@ -50,15 +48,15 @@ const initialStore = {
     }
 }
 
-
 function App() {
     const [GlobalState, GlobalDispatch] = useReducer(reducer, initialStore);
 
     const WrappedHeader = wrapperOuter(Header);
-    const WrappedMain = React.memo(wrapperOuter(Main));
+    const WrappedMain = wrapperOuter(Main);
     const WrappedFooter = wrapperOuter(Footer);
+
     return (
-        <GlobalContext.Provider value={{GlobalState, GlobalDispatch, changeModal, changeTab}}>
+        <GlobalContext.Provider value={{GlobalState, GlobalDispatch, changeModal, changeTab, setUser}}>
             <header className='page-header'>
                 <WrappedHeader/>
             </header>
@@ -68,7 +66,7 @@ function App() {
             <footer className='page-footer'>
                 <WrappedFooter/>
             </footer>
-            {GlobalState.modal.active && <Modal content={GlobalState.modal.content}/>}
+            {GlobalState.modal.active && <Modal/>}
         </GlobalContext.Provider>
     );
 }

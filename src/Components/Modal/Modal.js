@@ -4,7 +4,6 @@ import {GlobalContext} from '../Context';
 
 import Login from './Login';
 
-
 const Outer = styled.div`
    position: fixed;
    top:0;
@@ -25,12 +24,13 @@ const Container = styled.div`
    border-radius: 8px;
 `
 
-const Modal = ({content}) => {
+const Modal = () => {
 
     const {
         GlobalState,
         GlobalDispatch,
-        changeModal
+        changeModal,
+        setUser
     } = useContext(GlobalContext);
 
     useEffect(() => {
@@ -62,13 +62,12 @@ const Modal = ({content}) => {
 
     let modalContent = null;
 
-    switch (content) {
+    switch (GlobalState.modal.content) {
         case 'login' :
             modalContent = <Login GlobalState={GlobalState}
-                                              GlobalDispatch={GlobalDispatch}
-                                              closeModal={closeModal}
-
-            />
+                                  GlobalDispatch={GlobalDispatch}
+                                  closeModal={closeModal}
+                                  setUser={setUser}/>
             break;
         // case 'address' :
         //     modalContent = <Address GlobalState={GlobalState}
@@ -89,9 +88,8 @@ const Modal = ({content}) => {
         //                                   setActionsOnProducts={setActionsOnProducts}/>
         //     break;
         default :
-            // modalContent = <ErrorModal content={content} timeLeft={timeLeft} text={text}/>;
+        // modalContent = <ErrorModal content={content} timeLeft={timeLeft} text={text}/>;
     }
-
 
     return (
         <Outer>
@@ -99,7 +97,6 @@ const Modal = ({content}) => {
                 {modalContent}
             </Container>
         </Outer>
-
     )
 }
 

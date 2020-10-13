@@ -25,7 +25,7 @@
 }
 
 .scroller {
-    z-index: 5;
+    z-index: 1;
     cursor: pointer;
     position: absolute;
     background: #BDBDBD;

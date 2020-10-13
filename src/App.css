@@ -1,29 +1,26 @@
 @font-face {
     font-family: "Rubik";
-    src:
-            url("Fonts/regular/Rubik-Regular.woff") format("woff"),
-            url("Fonts/regular/Rubik-Regular.woff2") format("woff2"),
-            url("Fonts/regular/Rubik-Regular.eot") format("embedded-opentype");
+    src: url("Fonts/regular/Rubik-Regular.woff") format("woff"),
+    url("Fonts/regular/Rubik-Regular.woff2") format("woff2"),
+    url("Fonts/regular/Rubik-Regular.eot") format("embedded-opentype");
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Rubik";
-    src:
-            url("Fonts/medium/Rubik-Medium.woff") format("woff"),
-            url("Fonts/medium/Rubik-Medium.woff2") format("woff2"),
-            url("Fonts/medium/Rubik-Medium.eot") format("embedded-opentype");
+    src: url("Fonts/medium/Rubik-Medium.woff") format("woff"),
+    url("Fonts/medium/Rubik-Medium.woff2") format("woff2"),
+    url("Fonts/medium/Rubik-Medium.eot") format("embedded-opentype");
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Rubik";
-    src:
-            url("Fonts/bold/Rubik-Bold.woff") format("woff"),
-            url("Fonts/bold/Rubik-Bold.woff2") format("woff2"),
-            url("Fonts/bold/Rubik-Bold.eot") format("embedded-opentype");
+    src: url("Fonts/bold/Rubik-Bold.woff") format("woff"),
+    url("Fonts/bold/Rubik-Bold.woff2") format("woff2"),
+    url("Fonts/bold/Rubik-Bold.eot") format("embedded-opentype");
     font-weight: 700;
     font-style: normal;
 }
@@ -88,7 +85,7 @@ body.no-scroll {
 }
 
 .btn--transparent {
-    color:#E5261E;
+    color: #E5261E;
     background-color: transparent;
 }
 

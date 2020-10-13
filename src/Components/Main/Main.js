@@ -1,7 +1,8 @@
-import React, {useReducer} from 'react';
+import React, {useEffect, useContext} from 'react';
 import styled from 'styled-components';
 import Films from './Films/Films';
 import Tele from './Tele/Tele';
+import {GlobalContext} from "../Context";
 
 
 const Container = styled.div`     
@@ -41,52 +42,53 @@ const Tab = styled.li`
     }
 `;
 
-const CHANGE_TAB = 'main/change_tab'
-
-const initialState = {
-    tabs: [
-        {
-            id: 'films',
-            text: 'Фильмы'
-        },
-        {
-            id: 'tv',
-            text: 'Телеканалы'
-        }
-    ],
-    activeTab: 'films'
-}
-
-
-const reducer = (State, action) => {
-    switch (action.type) {
-        case CHANGE_TAB:
-            return {
-                ...State, activeTab: action.id,
-            };
-        default:
-            throw new Error();
-    }
-}
-
-// action creators
-export const changeTab = (id) => ({type: CHANGE_TAB, id});
-
-
 const Main = () => {
+    const pageHash = window.location.hash;
 
-    const [State, dispatch] = useReducer(reducer, initialState);
+    const {
+        GlobalState,
+        GlobalDispatch,
+        changeTab
+    } = useContext(GlobalContext);
+
+
+    const categoriesTabs = {
+        tabs: [
+            {
+                id: 'films',
+                text: 'Фильмы'
+            },
+            {
+                id: 'tv',
+                text: 'Телеканалы'
+            }
+        ]
+    }
+
+
+    useEffect(() => {
+        if (GlobalState.activeTab === 'films' && pageHash === '#tv') {
+            tabsClickHandler('tv');
+        }
+    }, [])
 
     const tabsClickHandler = (id) => {
-        dispatch(changeTab(id));
+        GlobalDispatch(changeTab(id));
     }
 
-    const tabs = State.tabs.map(tab => {
+    const changeHash = (id) => {
+        id === 'tv'
+            ? window.history.replaceState(null, null, '#tv')
+            : window.history.replaceState(null, null, ' ')
+    }
+
+    const tabs = categoriesTabs.tabs.map(tab => {
         return (
             <Tab key={tab.id}
-                 active={tab.id === State.activeTab}
+                 active={tab.id === GlobalState.activeTab}
                  onClick={() => {
-                     tabsClickHandler(tab.id)
+                     tabsClickHandler(tab.id);
+                     changeHash(tab.id);
                  }}>
                 <h2>{tab.text}</h2>
             </Tab>
@@ -95,7 +97,7 @@ const Main = () => {
 
     let tabsContent = null;
 
-    switch (State.activeTab) {
+    switch (GlobalState.activeTab) {
         case 'films' :
             tabsContent = <Films/>
             break;
@@ -117,4 +119,4 @@ const Main = () => {
     );
 }
 
-export default Main
+export default Main;

@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {GlobalContext} from '../Context';
 import styled from 'styled-components'
+
 
 
 const Container = styled.div`
@@ -14,10 +16,19 @@ margin-top: 2px;
 
 
 
-const User= (props) => {
+const User= () => {
+
+    const {
+        GlobalState,
+        GlobalDispatch,
+        changeModal
+    } = useContext(GlobalContext);
+
     return (
         <Container>
-            <Button className='btn btn--red'>Войти</Button>
+            <Button className='btn btn--red' onClick={()=> {
+                GlobalDispatch(changeModal({content:'login', active: true,}));
+            }}>Войти</Button>
         </Container>
     );
 }

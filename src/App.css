@@ -38,6 +38,10 @@ body {
     font-family: "Rubik", sans-serif;
 }
 
+body.no-scroll {
+    overflow: hidden !important;
+}
+
 #root {
     display: flex;
     flex-direction: column;

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styled from 'styled-components'
-import logo from "../../Assets/logo.svg";
 import {Formik, Form, Field} from 'formik';
+import {GlobalContext} from "../Context";
 
 const Container = styled.div`
     margin-left: 17.5%;
@@ -43,18 +43,20 @@ const InputOuter = styled.div`
 
 const Button = styled.button`
   margin-left: auto;
-
 `
 
-export const FormikSearchPanel = () => (
+export const FormikSearchPanel = ({GlobalDispatch, changeModal}) => (
     <Container>
         <Formik
             initialValues={{
                 search: ''
             }}
             onSubmit={values => {
-                // same shape as initial values
-                console.log(values);
+                const popUp = {
+                    active: true,
+                    title: 'search',
+                }
+                GlobalDispatch(changeModal(popUp));
             }}
         >
             {({errors, touched}) => (
@@ -70,9 +72,14 @@ export const FormikSearchPanel = () => (
 );
 
 
-const SearchPanel = (props) => {
+const SearchPanel = () => {
+    const {
+        GlobalDispatch,
+        changeModal
+    } = useContext(GlobalContext);
+
     return (
-        <FormikSearchPanel/>
+        <FormikSearchPanel GlobalDispatch={GlobalDispatch} changeModal={changeModal}/>
     );
 }
 

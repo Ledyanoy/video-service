@@ -54,11 +54,17 @@ const ImageOuter = styled.div`
 `
 
 
-const NewItem = ({item}) => {
+const NewItem = ({item, changeModal, GlobalDispatch}) => {
 
     return (
         <Li>
-            <ImageOuter>
+            <ImageOuter onClick={()=>{
+                GlobalDispatch(changeModal({
+                    active: true,
+                    title: 'content-alert',
+                    content: item.title,
+                }))
+            }}>
                 <img src={item.image} alt={item.title}/>
                 <p>{item.desc} </p>
             </ImageOuter>

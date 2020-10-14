@@ -60,10 +60,16 @@ const Li = styled.li`
 `
 
 
-const Genre = ({item}) => {
+const Genre = ({item, GlobalDispatch, changeModal}) => {
 
     return (
-        <Li color={item.color}>
+        <Li color={item.color} onClick={()=>{
+            GlobalDispatch(changeModal({
+                active: true,
+                title: 'content-alert',
+                content: item.title,
+            }))
+        }}>
             <div className='background'></div>
             <img src={item.image} alt={item.title}/>
             <span>{item.title}</span>

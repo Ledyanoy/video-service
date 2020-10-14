@@ -51,8 +51,7 @@ const Input = styled.div`
         :focus {
         outline: none;        
       }
-    }  
-     
+    }       
     &.hasError {
       border-bottom: 1px solid #E5261E; 
     }   
@@ -120,13 +119,12 @@ const User = () => {
                 </Form>
             )}
         </Formik>
-
     );
 
     const Enter = () => {
         return (
             <ButtonEnter className='btn btn--red' onClick={() => {
-                GlobalDispatch(changeModal({content: 'login', active: true,}));
+                GlobalDispatch(changeModal({title: 'login', active: true,}));
             }}>Войти</ButtonEnter>
         )
     }
@@ -157,4 +155,4 @@ const User = () => {
     )
 }
 
-export default User
+export default User;

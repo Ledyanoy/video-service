@@ -43,8 +43,8 @@ const initialStore = {
     activeTab: 'films',
     modal: {
         active: false,
-        content: '',
-        error: false,
+        title: '',
+        content: ''
     }
 }
 

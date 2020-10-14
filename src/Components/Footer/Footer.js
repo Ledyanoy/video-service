@@ -27,14 +27,14 @@ const Footer = () => {
 
     return (
         <Container>
-            <a href="https://htc-cs.ru/" target='_blank' className='link'>
+            <a href="https://htc-cs.ru/" target='_blank' className='link' rel="noopener noreferrer">
                 <img src={htc} alt="htc-cs" className='footer-logo'/>
             </a>
             <Address>
                 <p>426057, Россия, Удмуртская Республика, г. Ижевск, ул. Карла Маркса, 246 (ДК «Металлург»)</p>
                 <a href="tel:+73412938861" className='link link--phone'>+7 (3412) 93-88-61</a>,&thinsp;
                 <a href="tel:432929" className='link link--phone'>43-29-29</a>
-                <a href="https://htc-cs.ru/" className='link link--creator' target='_blank'>htc-cs.ru</a>
+                <a href="https://htc-cs.ru/" className='link link--creator' target='_blank' rel="noopener noreferrer">htc-cs.ru</a>
             </Address>
         </Container>
     );

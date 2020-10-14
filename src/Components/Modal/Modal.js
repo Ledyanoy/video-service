@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {GlobalContext} from '../Context';
 
 import Login from './Login';
+import Error from "./Error";
 
 const Outer = styled.div`
    position: fixed;
@@ -62,31 +63,19 @@ const Modal = () => {
 
     let modalContent = null;
 
-    switch (GlobalState.modal.content) {
+    switch (GlobalState.modal.title) {
         case 'login' :
             modalContent = <Login GlobalState={GlobalState}
                                   GlobalDispatch={GlobalDispatch}
                                   closeModal={closeModal}
                                   setUser={setUser}/>
             break;
-        // case 'address' :
-        //     modalContent = <Address GlobalState={GlobalState}
-        //                             GlobalDispatch={GlobalDispatch}
-        //                             closeModal={closeModal}
-        //                             setLoading={setLoading}
-        //                             ModalsDispatch={ModalsDispatch}
-        //                             changeModal={changeModal}
-        //                             ModalsState={ModalsState}/>
-        //     break;
-        // case 'quantity-alert' :
-        //     modalContent = <QuantityAlert GlobalDispatch={GlobalDispatch}
-        //                                   closeModal={closeModal}
-        //                                   setLoading={setLoading}
-        //                                   ModalsDispatch={ModalsDispatch}
-        //                                   ModalsState={ModalsState}
-        //                                   increaseItem={increaseItem}
-        //                                   setActionsOnProducts={setActionsOnProducts}/>
-        //     break;
+        case 'search' :
+            modalContent = <Error GlobalState={GlobalState} closeModal={closeModal}/>
+            break;
+        case 'content-alert' :
+            modalContent = <Error GlobalState={GlobalState} closeModal={closeModal}/>
+            break;
         default :
         // modalContent = <ErrorModal content={content} timeLeft={timeLeft} text={text}/>;
     }

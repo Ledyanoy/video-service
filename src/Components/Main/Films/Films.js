@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import NewItem from './NewItem';
 import Genre from './Genre'
 import fireIcon from "../../../Assets/fire-icon.png";
 import styled from 'styled-components';
 
 import filmsData from "../../../Data/films-data";
+import {GlobalContext} from "../../Context";
 
 const Container = styled.div`     
     padding-top: 8px;
@@ -45,8 +46,20 @@ const List = styled.ul`
 
 
 const Films = () => {
-    const filmItems = filmsData.newItems.map(item => <NewItem key={item.id} item={item}/>);
-    const genreItems = filmsData.genres.map(item => <Genre key={item.id} item={item}/>);
+    const {
+        GlobalDispatch,
+        changeModal
+    } = useContext(GlobalContext);
+
+    const filmItems = filmsData.newItems.map(item => <NewItem key={item.id}
+                                                              item={item}
+                                                              GlobalDispatch={GlobalDispatch}
+                                                              changeModal={changeModal}/>);
+
+    const genreItems = filmsData.genres.map(item => <Genre key={item.id}
+                                                           item={item}
+                                                           GlobalDispatch={GlobalDispatch}
+                                                           changeModal={changeModal}/>);
 
     return (
         <Container>

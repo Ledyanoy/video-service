@@ -1,3 +1,8 @@
+import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
+import 'core-js/features/string/repeat';
+import 'element-closest-polyfill';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';

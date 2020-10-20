@@ -12,7 +12,17 @@ const Container = styled.div`
     form{
       display: flex;
       align-items: start;
-    }      
+    }    
+    @media screen and (max-width: 1000px) {
+        margin-left: 0;       
+    }    
+    @media screen and (max-width: 800px) {
+        order: 3;
+        width: 100%;         
+        margin-top: 20px; 
+        margin-left: auto;
+        margin-right: auto;           
+    }
 `
 
 const InputOuter = styled.div`

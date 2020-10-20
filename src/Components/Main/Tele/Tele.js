@@ -8,11 +8,14 @@ import styled from 'styled-components';
 
 import teleData from '../../../Data/tele-data';
 
-
 const Container = styled.div`  
     padding-top: 27px;
-    padding-bottom: 8px;   
-    
+    padding-bottom: 8px; 
+    .scrollable {
+        @media screen and (max-width: 1250px) {
+            width: 100%;        
+        }
+    }      
 `
 const List = styled.ul`     
     list-style: none;

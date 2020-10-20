@@ -9,6 +9,17 @@ import {GlobalContext} from "../../Context";
 
 const Container = styled.div`     
     padding-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (max-width: 1210px) {
+        max-width: 880px;        
+    }
+    @media screen and (max-width: 910px) {
+        max-width: 580px;        
+    }
+    @media screen and (max-width: 630px) {
+        max-width: 280px;        
+    }
 `
 
 const Title = styled.h3`     

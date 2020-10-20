@@ -13,7 +13,10 @@ const Li = styled.li`
         line-height: 24px;
         max-height: 48px;
         overflow: hidden;        
-    }    
+    } 
+    @media screen and (max-width: 1205px) {
+        margin-bottom: 20px;        
+    }   
 `
 
 const ImageOuter = styled.div`
@@ -50,6 +53,9 @@ const ImageOuter = styled.div`
     &:hover p {
         opacity: 1;
     }
+    @media screen and (max-width: 1205px) {
+        margin-bottom: 10px;        
+    }  
     
 `
 

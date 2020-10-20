@@ -8,7 +8,10 @@ import {deleteLoginFromStorage, setLogonInStorage} from "../../Helpers/SetLocalS
 const Container = styled.div`
     flex-grow: 1;
     display: flex;
-    justify-content: flex-end;      
+    justify-content: flex-end;  
+    @media screen and (max-width: 1000px) {
+        flex-grow: 0;       
+    }      
 `
 
 const Button = styled.button`

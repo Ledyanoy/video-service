@@ -9,6 +9,13 @@ const Container = styled.div`
     justify-content: space-between;   
     align-items: start; 
     padding-top: 33px;
+    @media screen and (max-width: 800px) {
+        flex-wrap: wrap;        
+    }
+    @media screen and (max-width: 360px) {
+     flex-direction: column;
+     align-items: center;     
+    }
 `
 
 const Logo = styled.a`  
@@ -26,6 +33,13 @@ const Logo = styled.a`
       font-size: 20px;
       line-height: 24px;
       color: #333333;
+  }
+  @media screen and (max-width: 800px) {
+     width: 50%;       
+  }
+  @media screen and (max-width: 360px) {
+    width: 100%;
+    margin-bottom: 20px;
   }
 `
 

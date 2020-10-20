@@ -13,13 +13,19 @@ const Li = styled.li`
     &:not(:last-of-type) {
         margin-bottom: 16px;
     }  
+    @media screen and (max-width: 768px) {
+            display: block;      
+    }
 `
 
 const Logo = styled.div`
     width: 32.5%;
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center; 
+    @media screen and (max-width: 768px) {
+            width: 100%;     
+    }   
 `
 
 const Schedule = styled.div`
@@ -27,6 +33,9 @@ const Schedule = styled.div`
     margin-left: 12px;  
     padding-top: 9px;  
     padding-bottom: 7px;   
+    @media screen and (max-width: 768px) {
+           margin-left: 0;     
+    } 
 `
 
 const Title = styled.h3`
@@ -40,6 +49,9 @@ const Title = styled.h3`
 const ScheduleList = styled.ul`
     list-style: none;
     padding-left: 0; 
+    li{
+      display: flex;
+    }    
     li:first-of-type {
         span {
             color: #E5261E;

@@ -6,7 +6,7 @@ import {GlobalContext} from "../Context";
 
 
 const Container = styled.div`     
-    padding-top: 44px;
+    padding-top: 44px;    
 `
 
 const TabsList = styled.ul`
@@ -27,6 +27,10 @@ const Tab = styled.li`
         font-size: 28px;
         line-height: 33px;  
         margin: 0;  
+        @media screen and (max-width: 400px) {
+            font-size: 24px;
+            line-height: 29px;        
+        }
     }        
     &::before {
     content: '';

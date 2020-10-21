@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/video-service/static/css/main.8f35851c.chunk.css",
+    "main.js": "/video-service/static/js/main.3f365746.chunk.js",
+    "main.js.map": "/video-service/static/js/main.3f365746.chunk.js.map",
+    "runtime-main.js": "/video-service/static/js/runtime-main.809199f3.js",
+    "runtime-main.js.map": "/video-service/static/js/runtime-main.809199f3.js.map",
+    "static/js/2.3eb74fd6.chunk.js": "/video-service/static/js/2.3eb74fd6.chunk.js",
+    "static/js/2.3eb74fd6.chunk.js.map": "/video-service/static/js/2.3eb74fd6.chunk.js.map",
+    "index.html": "/video-service/index.html",
+    "precache-manifest.f8aae2827a7ec13271b1070abcf84f31.js": "/video-service/precache-manifest.f8aae2827a7ec13271b1070abcf84f31.js",
+    "service-worker.js": "/video-service/service-worker.js",
+    "static/css/main.8f35851c.chunk.css.map": "/video-service/static/css/main.8f35851c.chunk.css.map",
+    "static/js/2.3eb74fd6.chunk.js.LICENSE.txt": "/video-service/static/js/2.3eb74fd6.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/video-service/static/media/Rubik-Regular.d57d4c61.woff2",
+    "static/media/bat.png": "/video-service/static/media/bat.7cedf799.png",
+    "static/media/cat.png": "/video-service/static/media/cat.11c6ce1f.png",
+    "static/media/htc.svg": "/video-service/static/media/htc.efc916ff.svg",
+    "static/media/logo.svg": "/video-service/static/media/logo.ff16ec5d.svg",
+    "static/media/once.png": "/video-service/static/media/once.6fb2ff7c.png",
+    "static/media/strip.png": "/video-service/static/media/strip.48330fa1.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.809199f3.js",
+    "static/js/2.3eb74fd6.chunk.js",
+    "static/css/main.8f35851c.chunk.css",
+    "static/js/main.3f365746.chunk.js"
+  ]
+}
